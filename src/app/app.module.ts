@@ -12,10 +12,18 @@ import { LayoutComponent } from './layout/layout.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { ContentComponent } from './layout/content/content.component';
+import { CategoryComponent } from './category/category.component';
+import { CartComponent } from './cart/cart.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'cart', component: CartComponent},
+  { path: 'auth', component: AuthComponent},
+  { path: 'auth/register', component: RegisterComponent},
+  { path: 'admin-panel', component: AdminPanelComponent},
+  { path: 'category', component: CategoryComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -30,7 +38,9 @@ const routes: Routes = [
     LayoutComponent,
     FooterComponent,
     HeaderComponent,
-    ContentComponent
+    ContentComponent,
+    CategoryComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
