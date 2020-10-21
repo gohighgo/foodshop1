@@ -40,7 +40,8 @@ const routes: Routes = [
     HeaderComponent,
     ContentComponent,
     CategoryComponent,
-    CartComponent
+    CartComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
