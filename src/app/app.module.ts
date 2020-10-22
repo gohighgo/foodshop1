@@ -15,6 +15,8 @@ import { ContentComponent } from './layout/content/content.component';
 import { CategoryComponent } from './category/category.component';
 import { CartComponent } from './cart/cart.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -46,7 +48,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule,
-    RouterModule.forRoot(routes)
+    BrowserAnimationsModule,
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
