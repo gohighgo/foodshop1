@@ -4,6 +4,7 @@ const categoryRouter = express.Router();
  
 
 categoryRouter.get('/', categoryController.list);
+categoryRouter.get('/:id', categoryController.getById);
 categoryRouter.post('/', categoryController.add);
 categoryRouter.delete('/:id', categoryController.delete);
 categoryRouter.put('/:id', categoryController.edit);

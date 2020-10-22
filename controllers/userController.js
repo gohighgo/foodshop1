@@ -19,7 +19,7 @@ exports.register = function (request, response) {
         phoneNumber: request.body.phoneNumber,
         email: request.body.email
     }, function (err, doc) {
-        if (err) return response.sendStatus(400);
+        if (err) return response.status(400).send(err);
         response.send(doc._id);
     });
 
