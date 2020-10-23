@@ -1,11 +1,11 @@
 .footer {
   position: absolute;
+  left: 0;
   width: 100%;
   max-height: 169px;
   height: 169px;
-  left: 0;
-  bottom: 0;
-
+  z-index: 10;
+  background-color: #E5E5E5;
   background-image: url("https://i.imgur.com/qdMJYE1.png");
   background-size: cover;
 }
@@ -55,7 +55,6 @@
   bottom: 57px;
 
   cursor: pointer !important;
-  text-decoration: underline;
 }
 
 a{
@@ -87,7 +86,7 @@ a{
 }
 
 .footer-text-style {
-  font-family: Gilroy;
+  font-family: gilroylight, monospace;
   font-style: normal;
   font-weight: 300;
   font-size: 15px;
