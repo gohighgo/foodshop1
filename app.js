@@ -5,6 +5,11 @@ let bodyParser = require('body-parser');
 const multer = require("multer");
 
 
+// GENERATE KEYS
+// require('./generateKeys');
+
+
+
 const APIrouter = require("./routes/APIrouter");
 
 
@@ -45,7 +50,7 @@ app.use(bodyParser.json({ type: 'application/json' }));
 
 
 
-// routes
+// ROUTES
 app.use("/api", APIrouter);
 app.use(function (req, res, next) {
     res.status(404).send("Resource not found");

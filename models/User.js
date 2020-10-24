@@ -14,18 +14,15 @@ const userScheme = new Schema({
         type: String,
         required: true,
         minlength:3,
-        maxlength:20
+        maxlength:20,
+        unique: true
     },
     address: {
         type: String,
         required: true,
     },
-    password: {
-        type: String,
-        required: true,
-        minlength:5,
-        maxlength:20
-    },
+    hash: String,
+    salt: String,
     firstName: {
         type: String,
         required: true
@@ -51,9 +48,9 @@ const userScheme = new Schema({
         default: 2
     },
     isAdmin: {
-        type: Number,
+        type: Boolean,
         required: true,
-        default: 0
+        default: false
     }
 });
 module.exports = mongoose.model("User", userScheme);

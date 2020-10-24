@@ -1,9 +1,10 @@
 const User = require('../models/User');
+const utils = require('../lib/utils');
 
 //REVIEW
 exports.findById = function (request, response) {
-    User.findById(request.params.id, function(err, doc){
-        if (err) return response.status(400).send({error: 'User not found'});
+    User.findById(request.params.id, function (err, doc) {
+        if (err) return response.status(400).send({ success: false, msg: "could not find user" });
         response.send(doc);
     });
 }
@@ -11,19 +12,50 @@ exports.findById = function (request, response) {
 exports.register = function (request, response) {
     if (!request.body) return response.sendStatus(400);
 
+    const saltHash = utils.genPassword(request.body.password);
+
+    const salt = saltHash.salt;
+    const hash = saltHash.hash;
+
     User.create({
         login: request.body.login,
-        password: request.body.password,
+        hash: hash,
+        salt: salt,
         address: request.body.address,
         firstName: request.body.firstName,
         phoneNumber: request.body.phoneNumber,
         email: request.body.email
     }, function (err, doc) {
-        if (err) return response.status(400).send(err);
+        if (err) return response.status(401).send(err);
         response.send(doc._id);
     });
 
 }
+
+exports.login = function (request, response) {
+    User.findOne({ login: request.body.login })
+        .then((user) => {
+            if (!user) {
+                response.status(401).json({ success: false, msg: "could not find user" });
+                return;
+            }
+
+            // Function defined at bottom of app.js
+            const isValid = utils.validPassword(request.body.password, user.hash, user.salt);
+
+            if (isValid) {
+                const tokenObject = utils.issueJWT(user);
+                response.status(200).json({ success: true, token: tokenObject.token, expiresIn: tokenObject.expires, isAdmin: user.isAdmin });
+            } else {
+                response.status(401).json({ success: false, msg: "you entered the wrong password" });
+            }
+
+        })
+        .catch((err) => {
+            response.status(400).send(err);
+        });
+}
+
 
 //TODO
 exports.delete = function (request, response) {
