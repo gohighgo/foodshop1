@@ -1,0 +1,17 @@
+.carousel-indicators li {
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+  }
+  .active
+  {
+      background-color: red;
+  }
+  .carousel-item
+  {
+      background-color: transparent;
+  }
+  .logo-f
+  {
+      background-color: transparent;
+  }
