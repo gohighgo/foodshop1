@@ -19,6 +19,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ItemComponent } from './cart/item/item.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'auth/register', component: RegisterComponent},
   { path: 'admin-panel', component: AdminPanelComponent},
   { path: 'category', component: CategoryComponent},
+  { path: 'about/#contacts', component: AboutComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -45,7 +47,8 @@ const routes: Routes = [
     ContentComponent,
     CategoryComponent,
     CartComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
