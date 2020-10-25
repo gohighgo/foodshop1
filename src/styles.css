@@ -1,3 +1,5 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
 @font-face {
   font-family: "gilroylight";
   src: url("assets/Gilroy-Regular.woff") format("woff"), /* Modern Browsers */
