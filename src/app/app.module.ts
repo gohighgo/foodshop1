@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: 'auth/register', component: RegisterComponent},
   { path: 'admin-panel', component: AdminPanelComponent},
   { path: 'category', component: CategoryComponent},
+  { path: 'about/#contacts', component: AboutComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
