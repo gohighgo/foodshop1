@@ -1,0 +1,89 @@
+.header {
+  height: 200px;
+}
+
+.itm {
+  height: 400px;
+}
+
+.hh{
+  width: 258px;
+  height: 73px;
+
+  font-family: gilroylight;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 73px;
+  /* identical to box height */
+
+  letter-spacing: 0.05em;
+
+  color: #2B3348;
+
+}
+.line{
+  width: 746px;
+  margin-left: -50px;
+}
+.price{
+  width: 81px;
+  height: 23px;
+  margin-left: 680px;
+
+  font-family: gilroylight;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 23px;
+  /* identical to box height */
+
+
+  color: #000000;
+}
+.cols{
+  width: 80px;
+  height: 23px;
+  margin-left: 75px;
+
+  font-family: gilroylight;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 23px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+}
+.sum{
+  width: 64px;
+  height: 23px;
+  margin-left: 88px;
+
+  font-family: gilroylight;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 23px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+
+}
+
+.nameProduct{
+  font-family: gilroylight;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 23px;
+  /* identical to box height */
+
+
+  color: #000000;
+
+}
