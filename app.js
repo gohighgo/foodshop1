@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 let bodyParser = require('body-parser');
 const multer = require("multer");
+const cors = require('cors');
 
 
 // GENERATE KEYS
@@ -15,6 +16,7 @@ const APIrouter = require("./routes/APIrouter");
 
 const port = 1488;
 
+app.use(cors());
 
 app.use(express.static(__dirname + "/uploads"));
 
@@ -43,8 +45,8 @@ app.use(multer({ storage: storageConfig, fileFilter: fileFilter }).single("uploa
 
 // BODY PARSER SETTINGS
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.text());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/json' }));
 
 
