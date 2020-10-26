@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // import { ProductService } from './services/product.service';
-// import { UserService } from './services/user.service';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -13,17 +13,13 @@ export class AppComponent implements OnInit {
 
   constructor(
     // private productService : ProductService
-    // private userService : UserService
+    private userService : UserService
   ){}
 
   ngOnInit(){
-    // this.userService.register(
-    //   'zenardus15',
-    //   "123456abc",
-    //   'zavada',
-    //   'Artur',
-    //   '1234567890',
-    //   'example15@mail.com',
+    // this.userService.login(
+    //   'pussy_destroyer',
+    //   "123456abc"
     // ).subscribe((data)=>{
     //   console.log(data);
     // }, error=>{
