@@ -30,4 +30,12 @@ export class UserService {
     return this.http.post(this.url + `/register`, body) as Observable<any>;
   }
 
+  login(login: string, password: string): Observable<any> {
+    let body = {
+      login: login,
+      password: password
+    }
+    return this.http.post(this.url + `/login`, body) as Observable<any>;
+  }
+
 }

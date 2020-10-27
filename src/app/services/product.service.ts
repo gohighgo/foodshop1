@@ -2,49 +2,45 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-class Category{
-  // tslint:disable-next-line:variable-name
-  _id: string;
-  name: string;
-
-  // tslint:disable-next-line:variable-name
-  constructor(_id, name){
-    this._id = _id;
-    this.name = name;
-  }
-}
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  url = 'http://localhost:1488/api/category';
+  url = 'http://localhost:1488/api/product';
 
   constructor(
     private http: HttpClient
   ) { }
 
-
-  getCategories(): Observable<Category[]> {
-    return this.http.get(this.url) as Observable<Category[]>;
+  getProductsByCategory(id: string): Observable<any> {
+    return this.http.get(this.url + `/${id}`) as Observable<any>;
   }
-
-  getCategoryById(id: string): Observable<Category[]> {
-    return this.http.get(this.url + `/${id}`) as Observable<Category[]>;
+  getProductDetails(id: string): Observable<any> {
+    return this.http.get(this.url + `/details/${id}`) as Observable<any>;
   }
-
-  createCategory(name: string): Observable<string>{
-    return this.http.post(this.url, {name: name}) as Observable<string>;
-  }
-
-  deleteCategory(id: string): Observable<any> {
+  delete(id: string): Observable<any> {
     return this.http.delete(this.url + `/${id}`) as Observable<any>;
   }
-
-  editCategory(id: string, newName: string): Observable<any>{
-    return this.http.put(this.url + `/${id}`, {name: newName}) as Observable<any>;
+  edit(id: string, name:string, price: number, weight: number, composition: string, categoryId: string): Observable<any> {
+    let body = {
+      name: name,
+      price: price,
+      weight: weight,
+      composition: composition,
+      categoryId: categoryId
+    }
+    return this.http.put(this.url + `/${id}`, body) as Observable<any>;
   }
-
+  createProduct(name:string, price: number, weight: number, composition: string, categoryId: string, file: any): Observable<any>{
+    let body = {
+      name: name,
+      price: price,
+      weight: weight,
+      composition: composition,
+      categoryId: categoryId,
+      uploadedFile: file
+    }
+    return this.http.post(this.url, body) as Observable<any>;
+  }
 }
