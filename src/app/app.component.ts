@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { OrderService } from './services/order.service';
 
-// import { ProductService } from './services/product.service';
+import { ProductService } from './services/product.service';
 import { UserService } from './services/user.service';
 
 @Component({
@@ -13,9 +14,10 @@ export class AppComponent implements OnInit {
   title = 'untitled6';
 
   constructor(
-    // private productService : ProductService
+    private productService : ProductService,
     private userService : UserService,
-    private authService : AuthService
+    private authService : AuthService,
+    private orderService : OrderService
   ){}
 
   ngOnInit(){
@@ -31,8 +33,33 @@ export class AppComponent implements OnInit {
     //   console.log('not admin');
     // }
 
+    // this.orderService.getDelivered().subscribe((data)=>{
+    //       console.log(data);
+    //   }, error=>{
+    //     console.log(error);
+    //   });
+    // this.orderService.updateState('5f98134614c4a7236c2927bb', true).subscribe((data)=>{
+    //       console.log(data);
+    //   }, error=>{
+    //     console.log(error);
+    //   });
+
+    // this.orderService.createOrder(
+    //   'billy jinn',
+    //   [
+    //     {id: "1a2b3c", count: 5, price: 100},
+    //     {id: "1a2b3d", count: 2, price: 200}
+    //   ],
+    //   'Lviv ...',
+    //   '1234567980'
+    // ).subscribe((data)=>{
+    //         console.log(data);
+    //     }, error=>{
+    //       console.log(error);
+    //     });
+
     // this.userService.login(
-    //   'pussy_destroyer123',
+    //   'pussy_destroyer',
     //   "123456abc"
     //   ).subscribe((data)=>{
     //     console.log(data);
