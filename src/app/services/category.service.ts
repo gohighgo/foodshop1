@@ -16,7 +16,7 @@ class Category{
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class CategoryService {
 
   url = 'http://localhost:1488/api/category';
 
