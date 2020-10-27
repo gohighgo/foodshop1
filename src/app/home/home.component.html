@@ -1,40 +1,15 @@
 <div style="background-color: #E5E5E5;">
 <app-header></app-header>
   <div class="container" >
-    <div class="row">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active" id="car1">
-            <img src="https://i.imgur.com/7mZLWSV.png" class="d-block w-100" alt="here we go again">
-          </div>
-          <div class="carousel-item">
-            <img src="https://i.imgur.com/7mZLWSV.png" class="d-block w-100" alt="here we go again">
-          </div>
-          <div class="carousel-item">
-            <img src="https://i.imgur.com/7mZLWSV.png" class="d-block w-100" alt="here we go again">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+    <div class="row" style="padding-top: 90px">
+      <app-content></app-content>
     </div>
     <div class="row">
       <div class="col-sm-12 d-flex justify-content-center">
        <h2>Сама еффектна їжа</h2>
       </div>
     </div>
-  
+
     <div class="row">
       <div class="col-sm-12  d-flex justify-content-between text-center pp">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sequi ad perferendis pariatur necessitatibus incidunt expedita. Voluptatum sapiente dicta incidunt vel, maxime aliquid? Quia, fugiat id! Consequuntur ad facilis incidunt.
@@ -49,28 +24,21 @@
        <h2>Категорії</h2>
       </div>
     </div>
-   
+
 <div class="row d-flex justify-content-center">
-  <div class=" col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center" >
-    <a href="#" class="btn btn-danger btn-lg active mybtn" role="button" aria-pressed="true">Pizza</a>
+  <div class=" col-md-6 col-sm-12 d-flex justify-content-center category-container" >
+    <a routerLink="prod#pizza" class="btn btn-danger btn-lg active mybtn" id="cart2" (mouseover)="mouseOver1()" (mouseout)="mouseOut1()" role="button" aria-pressed="true">Піца</a>
     </div>
-  <div class=" col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center" >
-      <a href="#" class="btn btn-danger btn-lg active mybtn" role="button" aria-pressed="true">Pizza</a>
+  <div class=" col-md-6 col-sm-12 d-flex justify-content-center category-container" >
+      <a routerLink="prod#sushi" class="btn btn-danger btn-lg active mybtn" id="cart1" (mouseover)="mouseOver()" (mouseout)="mouseOut()" role="button" aria-pressed="true">Суші</a>
     </div>
-  <div class=" col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center" >
-        <a href="#" class="btn btn-danger btn-lg active mybtn" role="button" aria-pressed="true">Pizza</a>
+  <div class=" col-md-6 col-sm-12 d-flex justify-content-center category-container" >
+        <a routerLink="prod#burgers" class="btn btn-danger btn-lg active mybtn" id="cart3" (mouseover)="mouseOver2()" (mouseout)="mouseOut2()" role="button" aria-pressed="true">Бургери</a>
      </div>
-  <div class=" col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center" >
-          <a href="#" class="btn btn-danger btn-lg active mybtn" role="button" aria-pressed="true">Pizza</a>
+  <div class=" col-md-6 col-sm-12 d-flex justify-content-center category-container" >
+          <a routerLink="prod#drink" class="btn btn-danger btn-lg active mybtn" id="cart4" (mouseover)="mouseOver3()" (mouseout)="mouseOut3()" role="button" aria-pressed="true">Напої</a>
      </div>
-  <div class=" col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center" >
-            <a href="#" class="btn btn-danger btn-lg active mybtn" role="button" aria-pressed="true">Pizza</a>
-      </div>
-  <div class=" col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center" >
-              <a href="#" class="btn btn-danger btn-lg active mybtn" role="button" aria-pressed="true">Pizza</a>
-       </div>
-             
-                                                      
+
 </div>
 <div class="row">
   <div class="col-sm-12 d-flex justify-content-center">
@@ -78,26 +46,8 @@
   </div>
 </div>
 <a name="contacts">
-  <div class="row">
-    <div class="col-sm-12 col-md-6 d-flex justify-content-end">
-      <ul><p>+ 38 (099) 000-00-00 <img src="https://i.imgur.com/BwuY56j.png" alt="smth gone bad" ></p>
-      <p>+ 38 (099) 000-00-00 <img src="https://i.imgur.com/BwuY56j.png" alt="smth gone bad 2" ></p>
-      <p >example@gmail.com <img src="https://i.imgur.com/fJ4SSEb.png" alt=""  ></p>
-    </ul>
-        </div>
-     <div class="col-sm-12 col-md-6 d-flex justify-content-start">
-     <ul><p><img src="https://i.imgur.com/P2pQbXM.png" alt="" class="fbimg" > www.facebook.com</p>
-      <p><img src="https://i.imgur.com/aC705BT.png" alt="" class="fbimg" > www.youtube.com</p>
-      <p><img src="https://i.imgur.com/PGxG8lw.png" alt="" class="fbimg" > www.instagram.com</p>
-    </ul>
-     </div>
-
-    </div>
+  <app-contacts></app-contacts>
 </a>
-
-
-
-
-
- 
+</div>
+</div>
 <app-footer></app-footer>

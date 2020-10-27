@@ -31,13 +31,16 @@ div
 }
 .mybtn
 {
-  width: 160px;
-  height: 60px;
+  background: linear-gradient(134.17deg, #EF6767 4.98%, #d73d3d 94.88%);
+  width: 80%;
+  height: 80%;
+  padding-top: 50px;
+  font-size: 40px;
 }
-.fbimg
-{
-  width: 28px;
-  height: 28px;
+
+.category-container {
+  width: 378px;
+  height: 250px;
 }
 
 
