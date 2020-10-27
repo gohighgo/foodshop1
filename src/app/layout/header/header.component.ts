@@ -34,6 +34,7 @@ export class HeaderComponent implements OnInit {
     console.log('Out');
   }
 
+
   changeState(): void {
     this.currentState = this.currentState === 'initial' ? 'final' : 'initial';
   }

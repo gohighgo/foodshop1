@@ -12,7 +12,6 @@ import { LayoutComponent } from './layout/layout.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { ContentComponent } from './layout/content/content.component';
-import { CategoryComponent } from './category/category.component';
 import { CartComponent } from './cart/cart.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -24,6 +23,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AuthInterceptor } from './interceptors/auth-interceptor';
 
+// import { HttpClientModule } from '@angular/common/http';
+import { ProdComponent } from './prod/prod.component';
+import { ContactsComponent } from './layout/contacts/contacts.component';
+import {ProductService} from './services/product.service';
+import { ProductComponent } from './layout/product/product.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,11 +36,20 @@ const routes: Routes = [
   { path: 'auth', component: AuthComponent},
   { path: 'auth/register', component: RegisterComponent},
   { path: 'admin-panel', component: AdminPanelComponent},
-  { path: 'category', component: CategoryComponent},
   { path: 'about/#contacts', component: AboutComponent},
+  { path: 'prod', component: ProdComponent},
+  { path: 'prod#pizza', component: ProdComponent},
+  { path: 'prod#sushi', component: ProdComponent},
+  { path: 'prod#burgers', component: ProdComponent},
+  { path: 'prod#drink', component: ProdComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
+// @ts-ignore
+// @ts-ignore
+// @ts-ignore
+// @ts-ignore
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,10 +62,12 @@ const routes: Routes = [
     FooterComponent,
     HeaderComponent,
     ContentComponent,
-    CategoryComponent,
     CartComponent,
     AdminPanelComponent,
-    ItemComponent
+    ItemComponent,
+    ProdComponent,
+    ContactsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -73,4 +88,5 @@ const routes: Routes = [
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
