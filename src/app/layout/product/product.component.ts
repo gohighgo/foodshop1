@@ -16,6 +16,16 @@ export class ProductComponent implements OnInit {
   // tslint:disable-next-line:variable-name
   star_id: Array<string>;
 
+  plusCount(): void{
+    this.count += 1;
+  }
+
+  minusCount(): void{
+    if ( this.count > 1 ){
+      this.count -= 1;
+    }
+  }
+
   GenerateId(): void{
     this.id = this.Makeid(5);
     let heart;

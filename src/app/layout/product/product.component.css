@@ -43,6 +43,10 @@
   width: 90%;
 }
 
+.footer-prod a{
+  cursor: pointer !important;
+}
+
 .prod-count{
   font-family: gilroylight;
   font-style: normal;
