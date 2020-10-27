@@ -3,9 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 class Category{
+  // tslint:disable-next-line:variable-name
   _id: string;
   name: string;
 
+  // tslint:disable-next-line:variable-name
   constructor(_id, name){
     this._id = _id;
     this.name = name;
