@@ -21,6 +21,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ItemComponent } from './cart/item/item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProdComponent } from './prod/prod.component';
+import { ContactsComponent } from './layout/contacts/contacts.component';
+import {ProductService} from './services/product.service';
+import { ProductComponent } from './layout/product/product.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -31,9 +35,19 @@ const routes: Routes = [
   { path: 'admin-panel', component: AdminPanelComponent},
   { path: 'category', component: CategoryComponent},
   { path: 'about/#contacts', component: AboutComponent},
+  { path: 'prod', component: ProdComponent},
+  { path: 'prod#pizza', component: ProdComponent},
+  { path: 'prod#sushi', component: ProdComponent},
+  { path: 'prod#burgers', component: ProdComponent},
+  { path: 'prod#drink', component: ProdComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
+// @ts-ignore
+// @ts-ignore
+// @ts-ignore
+// @ts-ignore
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +63,10 @@ const routes: Routes = [
     CategoryComponent,
     CartComponent,
     AdminPanelComponent,
-    ItemComponent
+    ItemComponent,
+    ProdComponent,
+    ContactsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -64,4 +81,5 @@ const routes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
