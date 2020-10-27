@@ -1,0 +1,10 @@
+.block{
+  width: 243px;
+  height: 351px;
+
+  background: #E6E9EF;
+  border: 1px solid #E6E6E6;
+  box-sizing: border-box;
+  box-shadow: -7.2px -7.2px 12px rgba(255, 255, 255, 0.8), 6px 6px 12px rgba(166, 180, 200, 0.7);
+  border-radius: 6px;
+}
