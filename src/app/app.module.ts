@@ -12,7 +12,6 @@ import { LayoutComponent } from './layout/layout.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { ContentComponent } from './layout/content/content.component';
-import { CategoryComponent } from './category/category.component';
 import { CartComponent } from './cart/cart.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -33,7 +32,6 @@ const routes: Routes = [
   { path: 'auth', component: AuthComponent},
   { path: 'auth/register', component: RegisterComponent},
   { path: 'admin-panel', component: AdminPanelComponent},
-  { path: 'category', component: CategoryComponent},
   { path: 'about/#contacts', component: AboutComponent},
   { path: 'prod', component: ProdComponent},
   { path: 'prod#pizza', component: ProdComponent},
@@ -60,7 +58,6 @@ const routes: Routes = [
     FooterComponent,
     HeaderComponent,
     ContentComponent,
-    CategoryComponent,
     CartComponent,
     AdminPanelComponent,
     ItemComponent,
