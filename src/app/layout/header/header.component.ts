@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {AuthService} from '../../services/auth.service';
+import {UserService} from '../../services/user.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-header',
@@ -18,8 +21,19 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService, private userService: UserService) {
+    this.name = '';
+    if (this.authService.isLoggedIn()){
+      this.value = 'Вихід';
+      console.log(localStorage.getItem('d'));
+    }
+    else {
+      this.value = 'Вхід';
+    }
+  }
   private elem: any;
+  name: string;
+  value: string;
   currentState = 'initial';
 
   mouseOver(): void {

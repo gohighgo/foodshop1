@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div style="background-color: #E5E5E5; height: 1000px; padding-top: 200px; padding-left: 50px">
+<div (mouseover)="AddItemsToCart()" style="background-color: #E5E5E5; min-height: 700px; padding-top: 200px; padding-left: 50px">
   <div class="header">
   <h1 class="hh">Корзина</h1>
   <p><img src="https://i.imgur.com/FkiYEk3.png" alt="" class="line"></p>
@@ -9,9 +9,10 @@
       <span class="sum">Сумма</span>
     </div>
   </div>
-  <div id="cart-items" class="itm">
-    <app-item></app-item>
-    <app-item></app-item>
+  <div class="itm row col-sm-12">
+    <div #item>
+
+    </div>
   </div>
 </div>
 <app-footer></app-footer>

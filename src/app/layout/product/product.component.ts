@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+// @ts-ignore
+import {AsyncLocalStorage} from 'async_hooks';
+import {ajaxGetJSON} from 'rxjs/internal-compatibility';
+
+
 
 @Component({
   selector: 'app-product',
@@ -7,10 +12,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
+  value: any = null;
   count: number;
-  prodName: string;
-  price: string;
   id: string;
   out: boolean;
   // tslint:disable-next-line:variable-name
@@ -103,12 +107,30 @@ export class ProductComponent implements OnInit {
     this.out = false;
   }
 
+  AddToJson(): void{
+    let data;
+    data = [];
+
+    let json;
+    this.value.count = this.count;
+    json = JSON.stringify(this.value);
+
+    let prevData: JSON[];
+    prevData = JSON.parse(localStorage.getItem('prod'));
+    if (prevData !== null) {
+      data = prevData;
+    }
+    data.push(json);
+
+    localStorage.setItem('prod', JSON.stringify(data));
+
+    console.log(data);
+  }
+
   ngOnInit(): void {
     this.GenerateId();
     this.GenerateStarId();
     this.out = true;
-    this.price = '45.50';
-    this.prodName = 'Назва товару';
     this.count = 1;
   }
 

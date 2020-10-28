@@ -1,7 +1,7 @@
 <div class="header">
   <img src="https://i.imgur.com/hTRltoW.png" class="logo">
   <div class="links">
-    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="header-home header-text-style">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="header-home header-text-style">
         Головна
     </a>
     <a routerLink="/about" routerLinkActive="active" class="header-about header-text-style">
@@ -14,7 +14,10 @@
     <a routerLink="/cart" routerLinkActive="active" class="header-cart header-text-style">
       Корзина
     </a>
-    <input type="button" (mouseover)="mouseOver()" (mouseout)="mouseOut()" id="signIn" class="header-signIn" routerLink="/auth" value="Вхід">
+    <input type="button" (mouseover)="mouseOver()" (mouseout)="mouseOut()" id="signIn" class="header-signIn" routerLink="/auth" value="{{value}}">
+    <div class="name">
+      <span>{{name}}</span>
+    </div>
   </div>
   <div [@changeDivSize]="currentState" class="prod-list-block" id="prodList">
   </div>

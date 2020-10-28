@@ -1,3 +1,4 @@
+<div class="col-md-3 cont">
 <div class="block">
   <div class="heart">
     <a (mouseover)="MouseOver()" (mouseout)="MouseOut()" (click)="MouseClick()">
@@ -5,7 +6,7 @@
     </a>
   </div>
   <div class="img-box">
-      <img src="">
+      <img class="prod-img" src="{{value?.link}}">
   </div>
   <div class="stars">
     <a (mouseover)="MouseOverStar(0)" (mouseout)="MouseOutStar(0)" >
@@ -29,10 +30,10 @@
     </a>
   </div>
   <div class="prodName">
-    <span>{{prodName}}</span>
+    <span>{{value?.prodName}}</span>
   </div>
   <div class="value-info">
-    <span class="price">{{price}}</span>
+    <span class="price">{{value?.price}}</span>
     <span class="value">грн / шт.</span>
   </div>
 
@@ -51,9 +52,10 @@
       </a>
     </div>
     <div class="col-md-6">
-    <button type="button" class="btn btn-danger tocart">
+    <button (click)="AddToJson()" type="button" class="btn btn-danger tocart">
       <img src="https://i.imgur.com/YLO2cLt.png">
     </button>
     </div>
   </div>
+</div>
 </div>

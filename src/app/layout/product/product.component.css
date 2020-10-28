@@ -47,6 +47,11 @@
   cursor: pointer !important;
 }
 
+.cont{
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
 .prod-count{
   font-family: gilroylight;
   font-style: normal;
@@ -57,6 +62,13 @@
 
 
   color: #F95050;
+}
+
+.prod-img{
+  margin: 8px;
+  height: 114px;
+  width: 206px;
+  align-self: center;
 }
 
 .value{

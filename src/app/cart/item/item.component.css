@@ -27,7 +27,6 @@
 
 }
 .price{
-  margin-left: 380px;
 
 
   font-family: gilroylight;
@@ -41,7 +40,7 @@
   color: #000000;
 }
 .minus{
-  margin-left: 70px;
+  margin-left: 50px;
   top:25px;
 
   background: #EEB9B9;
@@ -69,8 +68,6 @@
 }
 .sum{
 
-  margin-left: 100px;
-
   font-family: gilroylight;
   font-style: normal;
   font-weight: 500;
@@ -81,7 +78,12 @@
 
   color: #000000;
 }
+
+.imgs img{
+  cursor: pointer !important;
+}
+
 .del{
-  margin-left: 200px;
+  margin-left: 100px;
   top:16px;
 }

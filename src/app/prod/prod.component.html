@@ -13,18 +13,6 @@
         <input type="button" class="btn btn-danger" style="width: 100%; margin-top: 20px" value="Більше...">
       </div>
       <div class="prod-container row">
-        <div class="col-md-3 cont">
-          <app-product></app-product>
-        </div>
-        <div class="col-md-3 cont">
-          <app-product></app-product>
-        </div>
-        <div class="col-md-3 cont">
-          <app-product></app-product>
-        </div>
-        <div class="col-md-3">
-          <app-product></app-product>
-        </div>
       </div>
     </div>
 
@@ -34,21 +22,9 @@
         <span class="category">Піца</span>
       </div>
       <div class="col-md-2">
-        <input type="button" class="btn btn-danger" style="width: 100%; margin-top: 20px" value="Більше...">
+        <input type="button" (click)="ClickP()" class="btn btn-danger" style="width: 100%; margin-top: 20px" value="Більше...">
       </div>
-      <div class="prod-container row">
-        <div class="col-md-3 cont">
-          <app-product></app-product>
-        </div>
-        <div class="col-md-3 cont">
-          <app-product></app-product>
-        </div>
-        <div class="col-md-3 cont">
-          <app-product></app-product>
-        </div>
-        <div class="col-md-3">
-          <app-product></app-product>
-        </div>
+      <div class="prod-container row" #contPizza>
       </div>
     </div>
     </a>
@@ -58,22 +34,10 @@
       <div class="col-md-10">
         <span class="category">Суші</span>
       </div>
-      <div class="col-md-2">
-        <input type="button" class="btn btn-danger" style="width: 100%; margin-top: 20px" value="Більше...">
+      <div class="col-md-2" >
+        <input type="button" (click)="ClickSu()" class="btn btn-danger" style="width: 100%; margin-top: 20px" value="Більше...">
       </div>
-      <div class="prod-container row">
-        <div class="col-md-3 cont">
-          <app-product></app-product>
-        </div>
-        <div class="col-md-3 cont">
-          <app-product></app-product>
-        </div>
-        <div class="col-md-3 cont">
-          <app-product></app-product>
-        </div>
-        <div class="col-md-3">
-          <app-product></app-product>
-        </div>
+      <div class="prod-container row" #contSushi>
       </div>
     </div>
     </a>
@@ -84,21 +48,9 @@
         <span class="category">Бургери</span>
       </div>
       <div class="col-md-2">
-        <input type="button" class="btn btn-danger" style="width: 100%; margin-top: 20px" value="Більше...">
+        <input type="button" (click)="ClickB()" class="btn btn-danger" style="width: 100%; margin-top: 20px" value="Більше...">
       </div>
-      <div class="prod-container row">
-        <div class="col-md-3 cont">
-          <app-product></app-product>
-        </div>
-        <div class="col-md-3 cont">
-          <app-product></app-product>
-        </div>
-        <div class="col-md-3 cont">
-          <app-product></app-product>
-        </div>
-        <div class="col-md-3">
-          <app-product></app-product>
-        </div>
+      <div class="prod-container row" #contBurgers>
       </div>
     </div>
     </a>
@@ -109,21 +61,9 @@
         <span class="category">Напої</span>
       </div>
       <div class="col-md-2">
-        <input type="button" class="btn btn-danger" style="width: 100%; margin-top: 20px" value="Більше...">
+        <input type="button" (click)="ClickD()" class="btn btn-danger" style="width: 100%; margin-top: 20px" value="Більше...">
       </div>
-      <div class="prod-container row">
-        <div class="col-md-3 cont">
-          <app-product></app-product>
-        </div>
-        <div class="col-md-3 cont">
-          <app-product></app-product>
-        </div>
-        <div class="col-md-3 cont">
-          <app-product></app-product>
-        </div>
-        <div class="col-md-3">
-          <app-product></app-product>
-        </div>
+      <div class="prod-container row" #contDrinks>
       </div>
     </div>
     </a>

@@ -34,7 +34,7 @@ export class UserService {
     let body = {
       login: login,
       password: password
-    }
+    };
     return this.http.post(this.url + `/login`, body) as Observable<any>;
   }
 
