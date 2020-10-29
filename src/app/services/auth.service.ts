@@ -13,6 +13,7 @@ export class AuthService {
     localStorage.setItem('id_token', responseObj.token);
     localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()));
     localStorage.setItem("is_admin", responseObj.isAdmin);
+    localStorage.setItem("user_id", responseObj.userId);
 
   }
 
@@ -20,6 +21,7 @@ export class AuthService {
     localStorage.removeItem("id_token");
     localStorage.removeItem("expires_at");
     localStorage.removeItem("is_admin");
+    localStorage.removeItem("user_id");
   }
 
   public isLoggedIn() {
@@ -32,6 +34,10 @@ export class AuthService {
 
   isAdmin() {
     return JSON.parse(localStorage.getItem("is_admin"));
+  }
+
+  getUserId() {
+    return localStorage.getItem("user_id");
   }
 
   getExpiration() {
