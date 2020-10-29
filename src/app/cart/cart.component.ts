@@ -8,6 +8,7 @@ import {
   ViewContainerRef
 } from '@angular/core';
 import {ItemComponent} from './item/item.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -16,13 +17,21 @@ import {ItemComponent} from './item/item.component';
 })
 export class CartComponent implements OnInit{
 
-  created: boolean;
+  price = 0;
+  pdv = 0;
+  allPrice = 0;
+
+  prods = [];
+
+  created = false;
   @ViewChild('item', {read: ViewContainerRef}) item: ViewContainerRef;
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
+  constructor(private componentFactoryResolver: ComponentFactoryResolver, private router: Router) { }
 
   AddComponent(data): void{
     let ItemComponents;
     let ItemComponentRef;
+    let prod;
+    prod = [];
 
     console.log('created');
 
@@ -32,10 +41,28 @@ export class CartComponent implements OnInit{
     ItemComponentRef.instance.value = {prodName: data.prodName, price: data.price, category: data.category};
     ItemComponentRef.instance.sum = data.count * data.price;
     ItemComponentRef.instance.count = data.count;
+
+    prod.push(data.category + data.prodName, data.count, data.price * data.count);
+    this.prods.push(prod);
+
+    this.price += data.count * data.price;
+    this.pdv += (this.price / 100) * 5;
+
+    this.allPrice = this.price + this.pdv;
+  }
+
+  FormOrder(): void{
+    localStorage.setItem('price', String(this.price));
+    localStorage.setItem('pdv', String(this.pdv));
+    localStorage.setItem('allPrice', String(this.allPrice));
+    localStorage.setItem('prods', JSON.stringify(this.prods));
+
+    this.router.navigateByUrl('/order');
   }
 
   AddItemsToCart(): void{
     if (!this.created) {
+      this.created = true;
       this.item.clear();
       let data;
       data = JSON.parse(localStorage.getItem('prod'));
@@ -44,11 +71,10 @@ export class CartComponent implements OnInit{
       for (let i = 0; i < data.length; i++) {
         this.AddComponent(data[i]);
       }
-      this.created = true;
+      console.log(this.prods);
     }
   }
 
   ngOnInit(): void {
-    this.created = false;
   }
 }

@@ -28,11 +28,13 @@ import { ProdComponent } from './prod/prod.component';
 import { ContactsComponent } from './layout/contacts/contacts.component';
 import {ProductService} from './services/product.service';
 import { ProductComponent } from './layout/product/product.component';
+import { OrderComponent } from './order/order.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'cart', component: CartComponent},
+  { path: 'order', component: OrderComponent},
   { path: 'auth', component: AuthComponent},
   { path: 'auth/register', component: RegisterComponent},
   { path: 'admin-panel', component: AdminPanelComponent},
@@ -67,7 +69,8 @@ const routes: Routes = [
     ItemComponent,
     ProdComponent,
     ContactsComponent,
-    ProductComponent
+    ProductComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

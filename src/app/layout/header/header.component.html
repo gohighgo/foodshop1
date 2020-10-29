@@ -14,7 +14,7 @@
     <a routerLink="/cart" routerLinkActive="active" class="header-cart header-text-style">
       Корзина
     </a>
-    <input type="button" (mouseover)="mouseOver()" (mouseout)="mouseOut()" id="signIn" class="header-signIn" routerLink="/auth" value="{{value}}">
+    <input type="button" (mouseover)="mouseOver()" (mouseout)="mouseOut()" id="signIn" class="header-signIn" routerLink="{{router}}" value="{{value}}">
     <div class="name">
       <span>{{name}}</span>
     </div>

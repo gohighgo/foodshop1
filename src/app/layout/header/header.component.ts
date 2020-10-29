@@ -24,16 +24,16 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService, private userService: UserService) {
     this.name = '';
     if (this.authService.isLoggedIn()){
-      this.value = 'Вихід';
-      console.log(localStorage.getItem('d'));
+      this.value = 'Профіль';
+      this.router = '/profile';
     }
     else {
-      this.value = 'Вхід';
     }
   }
   private elem: any;
   name: string;
-  value: string;
+  value = 'Вхід';
+  router = '/auth';
   currentState = 'initial';
 
   mouseOver(): void {
