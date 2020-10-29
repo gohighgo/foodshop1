@@ -29,6 +29,7 @@ import { ContactsComponent } from './layout/contacts/contacts.component';
 import {ProductService} from './services/product.service';
 import { ProductComponent } from './layout/product/product.component';
 import { OrderComponent } from './order/order.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -70,7 +71,8 @@ const routes: Routes = [
     ProdComponent,
     ContactsComponent,
     ProductComponent,
-    OrderComponent
+    OrderComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
