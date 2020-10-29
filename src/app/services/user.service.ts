@@ -38,4 +38,29 @@ export class UserService {
     return this.http.post(this.url + `/login`, body) as Observable<any>;
   }
 
+  changeLogin(userId: string, newValue: string): Observable<any> {
+    let body = { value: newValue };
+    return this.http.put(`${this.url}/change-login/${userId}`, body) as Observable<any>;
+  }
+
+  changeEmail(userId: string, newValue: string): Observable<any> {
+    let body = { value: newValue };
+    return this.http.put(`${this.url}/change-email/${userId}`, body) as Observable<any>;
+  }
+
+  changePhone(userId: string, newValue: string): Observable<any> {
+    let body = { value: newValue };
+    return this.http.put(`${this.url}/change-phone/${userId}`, body) as Observable<any>;
+  }
+
+  changeAddress(userId: string, newValue: string): Observable<any> {
+    let body = { value: newValue };
+    return this.http.put(`${this.url}/change-address/${userId}`, body) as Observable<any>;
+  }
+
+  changeName(userId: string, newValue: string): Observable<any> {
+    let body = { value: newValue };
+    return this.http.post(`${this.url}/change-name/${userId}`, body) as Observable<any>;
+  }
+
 }
