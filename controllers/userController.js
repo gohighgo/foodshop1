@@ -106,6 +106,24 @@ exports.changeAddress = function (request, response) {
     });
 }
 
+exports.changeAll = function (request, response) {
+    if (!request.body) return response.status(400).send({success: false, msg: "Value is empty"});
+
+    const {login, email, address, phone, name} = request.body;
+
+    const id = request.params.id;
+    User.updateOne({ _id: id }, {
+        address: address,
+        login: login,
+        email: email,
+        phoneNumber: phone,
+        firstName: name
+    }, function(err, res){
+        if (err) return response.status(400).send({success: false, msg: "User not found or incorrect value"});
+        response.send(res);
+    });
+}
+
 
 //TODO
 exports.delete = function (request, response) {
