@@ -45,6 +45,7 @@ const routes: Routes = [
   { path: 'prod#sushi', component: ProdComponent},
   { path: 'prod#burgers', component: ProdComponent},
   { path: 'prod#drink', component: ProdComponent},
+  { path: 'profile', component: ProfileComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
