@@ -13,6 +13,7 @@ userRouter.put('/change-phone/:id', userController.changePhone);
 userRouter.put('/change-address/:id', userController.changeAddress);
 userRouter.put('/change-name/:id', userController.changeName);
 userRouter.put('/change-all/:id', userController.changeAll);
+userRouter.put('/change-password/:id', userController.changePassword);
 
 // userRouter.delete('/:id', userController.delete);
 // userRouter.put('/:id', userController.edit);

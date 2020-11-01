@@ -124,6 +124,21 @@ exports.changeAll = function (request, response) {
     });
 }
 
+exports.changePassword = function (request, response) {
+    if (!request.body) return response.sendStatus(400);
+
+    const userId = request.params.id;
+    const saltHash = utils.genPassword(request.body.password);
+
+    const salt = saltHash.salt;
+    const hash = saltHash.hash;
+
+    User.updateOne({_id: userId}, {hash: hash, salt: salt}, function(err, res){
+        if(err) response.status(400).send(err);
+        response.send(res);
+    });
+} 
+
 
 //TODO
 exports.delete = function (request, response) {
