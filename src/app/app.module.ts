@@ -30,6 +30,7 @@ import {ProductService} from './services/product.service';
 import { ProductComponent } from './layout/product/product.component';
 import { OrderComponent } from './order/order.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -45,7 +46,7 @@ const routes: Routes = [
   { path: 'prod#sushi', component: ProdComponent},
   { path: 'prod#burgers', component: ProdComponent},
   { path: 'prod#drink', component: ProdComponent},
-  { path: 'profile', component: ProfileComponent},
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
   { path: '**', component: PageNotFoundComponent }
 ];
 
