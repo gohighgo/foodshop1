@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { UserService } from '../services/user.service';
 
@@ -14,7 +15,10 @@ export class ProfileComponent implements OnInit {
   error: boolean = false;
   userName: string;
 
-  userForm: FormGroup =  new FormGroup({
+  password: string = '';
+  repeat: string = '';
+
+  userForm: FormGroup = new FormGroup({
     "userLogin": new FormControl('', Validators.required),
     "userEmail": new FormControl('', [
       Validators.required,
@@ -26,8 +30,9 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private authService: AuthService
-  ) { 
+    private authService: AuthService,
+    private router: Router
+  ) {
 
     this.userId = this.authService.getUserId();
     this.userService.getUserById(this.userId).subscribe(
@@ -44,10 +49,24 @@ export class ProfileComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   submit() {
-    console.log(this.userForm);
+    // console.log(this.userForm);
+    console.log(this.password);
+    console.log(this.repeat);
+
+    if (this.changePass()) {
+      if (this.passValid()){
+        // console.log('change, valid');
+        this.userService.changePassword(this.authService.getUserId(), this.password)
+        .subscribe(
+          (data) => {this.password = ''; this.repeat = '';},
+          err => console.log(err)
+        )
+      }
+    }
+    
     this.userService.changeAll(
       this.userId,
       this.userName,
@@ -59,6 +78,24 @@ export class ProfileComponent implements OnInit {
       data => alert('Saved'),
       err => alert('Saving error: ' + err)
     );
+  }
+
+  changePass(): boolean {
+    if (this.password.length == 0 && this.repeat.length == 0)
+      return false;
+    return true;
+  }
+
+  passValid(): boolean {
+    if (this.password == this.repeat && this.password.length > 4) {
+      return true;
+    }
+    return false;
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigateByUrl('/');
   }
 
 }

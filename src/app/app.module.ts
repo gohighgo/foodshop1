@@ -14,7 +14,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { ContentComponent } from './layout/content/content.component';
 import { CartComponent } from './cart/cart.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -83,7 +83,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     NgbModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     {
