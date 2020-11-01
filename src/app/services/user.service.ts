@@ -60,7 +60,30 @@ export class UserService {
 
   changeName(userId: string, newValue: string): Observable<any> {
     let body = { value: newValue };
-    return this.http.post(`${this.url}/change-name/${userId}`, body) as Observable<any>;
+    return this.http.put(`${this.url}/change-name/${userId}`, body) as Observable<any>;
+  }
+
+  changeAll(
+    userId: string,
+    newName: string,
+    newLogin: string,
+    newEmail: string,
+    newPhone: string,
+    newAddress: string
+  ): Observable<any> {
+    let body = {
+      name: newName,
+      email: newEmail,
+      login: newLogin,
+      phone: newPhone,
+      address: newAddress
+    };
+    return this.http.put(`${this.url}/change-all/${userId}`, body) as Observable<any>;
+  }
+
+  changePassword(userId: string, newPassword: string): Observable<any> {
+    let body = { password: newPassword };
+    return this.http.put(`${this.url}/change-password/${userId}`, body) as Observable<any>;
   }
 
 }
