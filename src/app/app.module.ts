@@ -36,6 +36,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'cart', component: CartComponent},
   { path: 'order', component: OrderComponent},
+  { path: 'profile', component: ProfileComponent},
   { path: 'auth', component: AuthComponent},
   { path: 'auth/register', component: RegisterComponent},
   { path: 'admin-panel', component: AdminPanelComponent},
