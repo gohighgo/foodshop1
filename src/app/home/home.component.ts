@@ -66,12 +66,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // tslint:disable-next-line:label-position no-unused-expression
-    // this.categories = this.productService.getCategories();
-    document.getElementById('cart1').textContent = this.categories[0].name;
-    document.getElementById('cart2').textContent = this.categories[1].name;
-    document.getElementById('cart3').textContent = this.categories[2].name;
-    document.getElementById('cart4').textContent = this.categories[3].name;
   }
 
 }

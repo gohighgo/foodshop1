@@ -12,20 +12,20 @@ import { UserService } from '../services/user.service';
 export class ProfileComponent implements OnInit {
 
   userId: string;
-  error: boolean = false;
+  error = false;
   userName: string;
 
-  password: string = '';
-  repeat: string = '';
+  password = '';
+  repeat = '';
 
   userForm: FormGroup = new FormGroup({
-    "userLogin": new FormControl('', Validators.required),
-    "userEmail": new FormControl('', [
+    userLogin: new FormControl('', Validators.required),
+    userEmail: new FormControl('', [
       Validators.required,
       Validators.email
     ]),
-    "userAddress": new FormControl('', Validators.required),
-    "userPhone": new FormControl('')
+    userAddress: new FormControl('', Validators.required),
+    userPhone: new FormControl('')
   });
 
   constructor(
@@ -37,10 +37,10 @@ export class ProfileComponent implements OnInit {
     this.userId = this.authService.getUserId();
     this.userService.getUserById(this.userId).subscribe(
       (data) => {
-        this.userForm.controls['userLogin'].setValue(data.login);
-        this.userForm.controls['userEmail'].setValue(data.email);
-        this.userForm.controls['userAddress'].setValue(data.address);
-        this.userForm.controls['userPhone'].setValue(data.phoneNumber);
+        this.userForm.controls.userLogin.setValue(data.login);
+        this.userForm.controls.userEmail.setValue(data.email);
+        this.userForm.controls.userAddress.setValue(data.address);
+        this.userForm.controls.userPhone.setValue(data.phoneNumber);
         this.userName = data.firstName;
       },
       (err) => {
@@ -61,19 +61,19 @@ export class ProfileComponent implements OnInit {
         // console.log('change, valid');
         this.userService.changePassword(this.authService.getUserId(), this.password)
         .subscribe(
-          (data) => {this.password = ''; this.repeat = '';},
+          (data) => {this.password = ''; this.repeat = ''; },
           err => console.log(err)
-        )
+        );
       }
     }
-    
+
     this.userService.changeAll(
       this.userId,
       this.userName,
-      this.userForm.controls['userLogin'].value,
-      this.userForm.controls['userEmail'].value,
-      this.userForm.controls['userPhone'].value,
-      this.userForm.controls['userAddress'].value
+      this.userForm.controls.userLogin.value,
+      this.userForm.controls.userEmail.value,
+      this.userForm.controls.userPhone.value,
+      this.userForm.controls.userAddress.value
     ).subscribe(
       data => alert('Saved'),
       err => alert('Saving error: ' + err)
@@ -81,8 +81,9 @@ export class ProfileComponent implements OnInit {
   }
 
   changePass(): boolean {
-    if (this.password.length == 0 && this.repeat.length == 0)
+    if (this.password.length == 0 && this.repeat.length == 0) {
       return false;
+    }
     return true;
   }
 

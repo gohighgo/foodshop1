@@ -25,6 +25,21 @@
     box-shadow: 13px 13px 20px #cbced1,
                 -13px -13px 20px #ffffff;
   }
+
+  a{
+    cursor: pointer !important;
+  }
+
+  .adm{
+    text-align: center;
+    color: white;
+    width: 70px;
+    height: 25px;
+    background: linear-gradient(134.17deg, rgba(239, 103, 103, 0.9) 4.98%, rgba(215, 61, 61, 0.9) 94.88%);
+    box-shadow: -7.2px -7.2px 12px rgba(255, 255, 255, 0.8), 6px 6px 12px rgba(166, 180, 200, 0.7);
+    border-radius: 12px;
+  }
+
   .logo {
     width:100px;
     height: 100px;

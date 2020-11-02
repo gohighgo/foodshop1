@@ -61,6 +61,20 @@ a {
   cursor: pointer !important;
 }
 
+.infoP{
+  margin-left: 100px;
+  font-family: gilroylight;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 60px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
 .offline{
   font-family: gilroylight;
   font-style: normal;
@@ -108,6 +122,17 @@ a {
 
   color: #2B3348;
 
+}
+
+.newData{
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  width: 500px;
+  height: 300px;
+  background: linear-gradient(134.17deg, rgba(239, 103, 103, 0.9) 4.98%, rgba(215, 61, 61, 0.9) 94.88%);
+  box-shadow: -7.2px -7.2px 12px rgba(255, 255, 255, 0.8), 6px 6px 12px rgba(166, 180, 200, 0.7);
+  border-radius: 12px;
 }
 
 .hh{

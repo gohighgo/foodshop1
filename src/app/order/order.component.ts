@@ -12,6 +12,7 @@ export class OrderComponent implements OnInit {
   price = localStorage.getItem('price');
   pdv = localStorage.getItem('pdv');
   allPrice = localStorage.getItem('allPrice');
+  values = JSON.parse(localStorage.getItem('orderValues'));
 
   constructor(private orderService: OrderService) { }
 
@@ -23,7 +24,7 @@ export class OrderComponent implements OnInit {
     localStorage.setItem('allPrice', null);
 
     if (this.prods !== null) {
-      this.orderService.createOrder('Guest', this.prods, 'none', '111111111111')
+      this.orderService.createOrder(this.values.name, this.prods, this.values.address, this.values.tele)
         .subscribe((data) => {
           console.log(data);
         });

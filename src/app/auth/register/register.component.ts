@@ -11,14 +11,14 @@ export class RegisterComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
 
-  Register(name, pass): void{
+  Register(name, pass, email): void{
     this.userService.register(
       name,
       pass,
       ' ',
       ' ',
-      '111211111111',
-      'testd@gmail.com'
+      '111111111116',
+      email
     ).subscribe((data) => {
       console.log(data);
       this.router.navigateByUrl('/auth');

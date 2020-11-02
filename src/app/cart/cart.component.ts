@@ -9,23 +9,46 @@ import {
 } from '@angular/core';
 import {ItemComponent} from './item/item.component';
 import {Router} from '@angular/router';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import {getValueSymbolOfDeclaration} from '@angular/core/schematics/utils/typescript/symbol';
+import {AuthService} from '../services/auth.service';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
+  animations: [
+    trigger('changePosition', [
+      state('initial', style({ left: '120%' })),
+      state('final', style({
+        left: '35%'
+      })),
+      transition('initial=>final', animate('1000ms')),
+      transition('final=>initial', animate('1000ms'))
+    ]),
+    trigger('changeOpacity', [
+      state('initial', style({ opacity: '0', display: 'none' })),
+      state('final', style({
+        opacity: '0.3'
+      })),
+      transition('initial=>final', animate('1000ms')),
+      transition('final=>initial', animate('1000ms'))
+    ]),
+  ]
 })
 export class CartComponent implements OnInit{
 
   price = 0;
   pdv = 0;
   allPrice = 0;
-
+  currentState = 'initial';
   prods = [];
 
   created = false;
   @ViewChild('item', {read: ViewContainerRef}) item: ViewContainerRef;
-  constructor(private componentFactoryResolver: ComponentFactoryResolver, private router: Router) { }
+  constructor(private componentFactoryResolver: ComponentFactoryResolver,
+              private router: Router, private authService: AuthService, private userService: UserService) { }
 
   AddComponent(data): void{
     let ItemComponents;
@@ -51,7 +74,23 @@ export class CartComponent implements OnInit{
     this.allPrice = this.price + this.pdv;
   }
 
+  changeState(): void {
+    this.currentState = this.currentState === 'initial' ? 'final' : 'initial';
+  }
+
   FormOrder(): void{
+    const elem = document.getElementById('back');
+    this.changeState();
+    elem.style.display = 'block';
+  }
+
+  SaveData(tele, address): void{
+    this.userService.getUserById(this.authService.getUserId()).subscribe(
+      (data) => {
+        // tslint:disable-next-line:prefer-const
+        let values = JSON.parse('{"tele": "' + tele + '", "address": "' + address + '", "name": "' + data.login + '"}');
+        localStorage.setItem('orderValues', JSON.stringify(values));
+      });
     localStorage.setItem('price', String(this.price));
     localStorage.setItem('pdv', String(this.pdv));
     localStorage.setItem('allPrice', String(this.allPrice));
